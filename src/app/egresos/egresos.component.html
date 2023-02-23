@@ -1,0 +1,7 @@
+<form>
+    <label for="nuevo-egreso">Nuevo egreso:</label>
+    <input type="number" id="nuevo-egreso" name="nuevo-egreso" [(ngModel)]="nuevoEgreso">
+    <button type="button" (click)="agregarEgreso()">Agregar</button>
+  </form>
+<p>Total egresos: {{totalEgresos}}</p>
+  
