@@ -1,0 +1,22 @@
+<div class="contenedor">
+    <caption>Egresos</caption>
+    <table>
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+                <th>Valor</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of egresos">
+            <td data-label="Descripcion">{{e.descripcion}}</td>
+            <td data-label="Valor">{{e.valor}}</td>
+            <td data-label="Acciones"><!--si da error, toca crear html editar-->
+                <app-editar (egresoEditado)="onEgresoEditado($event)" [egreso]="e"></app-editar>
+                <!--<app-eliminar (egresoEliminado)="onEgresoEliminado($event)" [egreso]="e"></app-eliminar>-->
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

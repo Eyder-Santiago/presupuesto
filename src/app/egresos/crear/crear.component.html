@@ -1,0 +1,18 @@
+<form>
+  <h2 class="title text-center" *ngIf="egreso.id==0">Registro Egreso</h2>
+  <h2 class="title text-center" *ngIf="egreso.id>0">Editar Egreso</h2>
+    <div>
+      <label for="nuevo-egreso-descripcion">Descripción:</label>
+      <input type="string" id="nuevo-egreso-descripcion" name="nuevo-egreso-descripcion" placeholder="Pon aquí la descripción" 
+      [(ngModel)]="egreso.descripcion">
+    </div>
+    <div>
+      <label for="nuevo-egreso-valor">Valor:</label>
+      <input type="number" id="nuevo-egreso-valor" name="nuevo-egreso-valor" [(ngModel)]="egreso.valor">
+    </div>
+  
+      <button type="submit" *ngIf="egreso.id==0" (click)="agregarEgreso()">Agregar</button>
+      <button type="submit" *ngIf="egreso.id>0" (click)="editarEgreso()">Actualizar</button>
+</form>
+
+    

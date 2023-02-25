@@ -60,5 +60,6 @@ export class EgresoService {
     header.append('Access-Control-Allow-Origin','http://localhost');
     return this.http.delete(url,{headers:header});
   }
-  
+
+
 }

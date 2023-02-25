@@ -1,0 +1,5 @@
+<div>
+    <h1>Listado de Egresos</h1>
+</div>
+
+<app-listado #egreso [egresos]="egresos" (egresoEditado)="onEgresoEditado($event)" (egresoEliminado)="onEgresoEliminado($event)"></app-listado>
