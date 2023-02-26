@@ -43,22 +43,22 @@ export class CrearComponent implements OnInit {
     }
   }
 
-  //emitimos el objeto egreso que vamos a editar
-  editarEgreso() : void{
-    if(this.egreso.descripcion === null || this.egreso.valor === 0){
-      alert("Algún campo está vacío");
-    }else{
-      this.servicioEgreso.editarEgreso(this.egreso).subscribe(resp =>{
-        this.egresoEditado.emit(this.egreso);
-        alert("El egreso se modificó con éxito");
-      },
-      err=>{
-        alert("No se pudo editar el egreso: "+ err);
-      }
-      );
-    }
+  // //emitimos el objeto egreso que vamos a editar
+  // editarEgreso() : void{
+  //   if(this.egreso.descripcion === null || this.egreso.valor === 0){
+  //     alert("Algún campo está vacío");
+  //   }else{
+  //     this.servicioEgreso.editarEgreso(this.egreso).subscribe(resp =>{
+  //       this.egresoEditado.emit(this.egreso);
+  //       alert("El egreso se modificó con éxito");
+  //     },
+  //     err=>{
+  //       alert("No se pudo editar el egreso: "+ err);
+  //     }
+  //     );
+  //   }
 
-  }
+  // }
 
 
 

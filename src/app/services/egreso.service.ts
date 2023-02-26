@@ -54,7 +54,7 @@ export class EgresoService {
   }
 
   public eliminarEgreso(egreso:Egreso){
-    let  url = this.UrlBase + '/egresos/'+ egreso.id;
+    let  url = this.UrlBase + '/egresos/eliminar/' + egreso.id;
     let header=new HttpHeaders();
     header.append('Content-Type','aplication/json')
     header.append('Access-Control-Allow-Origin','http://localhost');
