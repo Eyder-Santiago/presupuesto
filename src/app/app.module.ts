@@ -3,20 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IngresosComponent } from './ingresos/ingresos.component';
 import { FormsModule } from '@angular/forms';
 import { EgresosModule } from './egresos/egresos.module';
+import { IngresosModule } from './ingresos/ingresos.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    IngresosComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    EgresosModule
+    EgresosModule,
+    IngresosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
