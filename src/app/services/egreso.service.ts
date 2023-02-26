@@ -45,7 +45,7 @@ export class EgresoService {
   }
 
   public editarEgreso(egreso:Egreso){
-    let url = this.UrlBase + '/egresos';
+    let url = this.UrlBase + '/egresos/editar/' + egreso.id;
     let header=new HttpHeaders();
     header.append('Content-Type','aplication/json')
     header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
