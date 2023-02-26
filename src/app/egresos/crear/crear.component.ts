@@ -10,7 +10,7 @@ import { EgresoService } from 'src/app/services/egreso.service';
 export class CrearComponent implements OnInit {
 
   @Output() egresoCreado = new EventEmitter<Egreso>();
-  @Output() egresoEditado = new EventEmitter<Egreso>();
+  //@Output() egresoEditado = new EventEmitter<Egreso>();
 
   egreso:Egreso = new Egreso();
 

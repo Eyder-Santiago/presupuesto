@@ -1,3 +1,38 @@
 h1{
     text-align: center;
 }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', cursive;
+  }
+  
+  .body {
+    font-family: comic;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ar-acciones {
+    width: 50px;
+  }
+  
+  .ar-most-formu {
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .fondo-amarillo {
+    background-color: var(--color-amarillo);
+  }
+  
+  button {
+    background: transparent;
+    border: 5px;
+  }
+  .box-shadow {
+    box-shadow: 5px 5px 15px rgb(100, 100, 100);
+  }
+  
