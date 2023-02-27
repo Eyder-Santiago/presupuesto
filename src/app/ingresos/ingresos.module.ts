@@ -5,6 +5,9 @@ import { EditarComponent } from './editar/editar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ListadoComponent } from './listado/listado.component';
+import { FormsModule } from '@angular/forms';
+import { IngresosRoutingModule } from './ingresos-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,7 +20,10 @@ import { ListadoComponent } from './listado/listado.component';
     ListadoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    IngresosRoutingModule,
+    HttpClientModule
   ]
 })
 export class IngresosModule { }

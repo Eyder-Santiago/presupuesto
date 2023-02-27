@@ -19,7 +19,8 @@ export class EgresoService {
   ) { }
 
   public agregarEgreso(egreso:Egreso){
-    //agregamos el egreso que viene al arreglo de egresos
+    //agregamos el egreso que el usuario anotó en egreso.html, procesado en egreso.ts
+    //y dirigido aquí
     this.egresos.push(egreso);
   }
 

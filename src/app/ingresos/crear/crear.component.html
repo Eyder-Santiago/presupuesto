@@ -1,1 +1,14 @@
-<p>crear works!</p>
+<form>
+    <h2 class="title text center">Registro ingreso</h2>
+    <div>
+        <label for="nuevo-ingreso-descripcion" >Descripción</label>
+        <input type="string" id="nuevo-ingreso-descripcion" name="nuevo-ingreso-descripcion" placeholder="Pon aquí la descripción"
+        [(ngModel)]="ingreso.descripcion">
+    </div>
+    <div>
+        <label for="nuevo-ingreso-valor">Valor</label>
+        <input type="number" id="nuevo-ingreso-valor" name="nuevo-ingreso-valor" [(ngModel)]="ingreso.valor">
+    </div>
+
+    <button type="submit" (click)="agregarIngreso()">Agregar</button>
+</form>
