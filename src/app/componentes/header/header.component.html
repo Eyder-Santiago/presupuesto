@@ -4,6 +4,12 @@
         <div class="presupuesto_titulo">
             Presupuesto Disponible: {{saldoTotal | currency:'COP':'$'}}
         </div>
+        <div class="presupuesto_titulo">
+          Porcentaje presupuesto Disponible: {{ingresoPorcentajeDisponible | percent}}
+        </div>
+        <div class="presupuesto_titulo">
+          Porcentaje del egreso sobre los ingresos totales: {{porcentaje | percent}}
+        </div>
     </div>
   </div>
 

@@ -17,29 +17,43 @@ export class HeaderComponent implements OnInit {
    this.calcularSaldoTotal();
   }
 
-  public saldoTotal:number=0;
+  public saldoTotal: number = 0;
+  public saldoIngreso: number = 0;
+  public saldoEgreso: number = 0;
 
-  calcularSaldoTotal(){
+  //porcentaje del egreso comparado con el ingreso
+  public porcentaje: number = 0;
+
+  //porcentaje de ingreso disponible sobre los egresos
+  public ingresoPorcentajeDisponible: number = 0;
+  
+  calcularSaldoTotal() {
     let saldoIngreso = 0;
-    this.servicioIngreso.getIngresos().subscribe(resp =>{
+    this.servicioIngreso.getIngresos().subscribe(resp => {
       for (let i = 0; i < resp.length; i++) {
         saldoIngreso += resp[i].valor;
         this.saldoTotal = saldoIngreso;
       }
     });
+  
     let saldoEgreso = 0;
-    this.servicioEgreso.getEgresos().subscribe(resp =>{
+    this.servicioEgreso.getEgresos().subscribe(resp => {
       for (let i = 0; i < resp.length; i++) {
         saldoEgreso += resp[i].valor;
       }
-      this.saldoTotal -=saldoEgreso;
+      this.saldoTotal -= saldoEgreso;
+      this.saldoIngreso = saldoIngreso;
+      this.saldoEgreso = saldoEgreso;
+      this.porcentaje = (this.saldoEgreso / this.saldoIngreso); // División de saldoEgreso entre saldoIngreso
+      this.ingresoPorcentajeDisponible = this.saldoTotal / this.saldoIngreso;
     });
-
-    console.log(this.saldoTotal);
-
-  ;
   }
+  
 
+    // //porcentaje del egreso comparado con el ingreso
+    // getPorcentajeTotal(){
+    //   return this.getEgresoTotal()/this.getIngresoTotal();
+    // }
 
 
 
