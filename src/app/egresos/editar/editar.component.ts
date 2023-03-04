@@ -12,7 +12,7 @@ export class EditarComponent implements OnInit {
   mostrarFormulario : boolean = false; //muestra u oculta el form
 
   //Emitimos los nuevos valores del objetos desde la clase hija para ser escuchada por la clase padre
-  @Output() egresoEditado = new EventEmitter<Egreso>;
+  @Output() egresoEditado = new EventEmitter<Egreso>();
 
   //traemos los objetos egreso desde la base de datos
   @Input() egreso = new Egreso();
@@ -44,6 +44,7 @@ export class EditarComponent implements OnInit {
         this.servicioEgreso.editarEgreso(this.egreso).subscribe(resp =>{
           this.egresoEditado.emit(this.egreso);
           alert("El egreso se modificó con éxito");
+          this.cerrarFormulario();
         },
         err=>{
           alert("No se pudo editar el egreso: "+ err);

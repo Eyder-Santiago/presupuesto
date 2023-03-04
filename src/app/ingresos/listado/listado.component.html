@@ -1,1 +1,24 @@
-<p>listado works!</p>
+<div class="contenedor">
+    <caption class="title">Ingresos</caption>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Descripción</th>
+                <th>Valor</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of ingresos">
+                <td data-label="Descripcion">{{i.descripcion}}</td>
+                <td data-label="Valor">${{i.valor}}</td>
+                <td data-label="Acciones">
+                    <app-editar (ingresoEditado)="onIngresoEditado" [ingreso]="i"></app-editar>
+                    <app-eliminar (ingresoEliminado)="onIngresoEliminado" [ingreso]="i"></app-eliminar>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="ingresos/crear">Añadir</a>
+</div>
+

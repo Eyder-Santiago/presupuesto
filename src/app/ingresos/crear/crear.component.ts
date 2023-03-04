@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Ingreso } from 'src/app/modelo/ingreso';
-import { IngresosService } from 'src/app/services/ingresos.service';
+import { IngresoService } from 'src/app/services/ingreso.service';
 
 @Component({
   selector: 'app-crear',
@@ -14,7 +14,7 @@ export class CrearComponent implements OnInit {
 
   ingreso:Ingreso = new Ingreso();
 
-  constructor(public servicioIngreso:IngresosService) { }
+  constructor(public servicioIngreso:IngresoService) { }
 
   ngOnInit(): void {
   }

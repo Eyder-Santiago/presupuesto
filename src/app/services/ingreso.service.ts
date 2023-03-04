@@ -6,7 +6,7 @@ import { Ingreso } from '../modelo/ingreso';
 @Injectable({
   providedIn: 'root'
 })
-export class IngresosService {
+export class IngresoService {
 
   //Arreglo donde se guardarán los ingresos
   public ingresos:Array<Ingreso>=[];
@@ -45,7 +45,7 @@ export class IngresosService {
   }
 
   public editarIngreso(ingreso:Ingreso){
-    let url = this.UrlBase + '/ingresos/editar' + ingreso.id;
+    let url = this.UrlBase + '/ingresos/editar/' + ingreso.id;
     let header=new HttpHeaders();
     header.append('Content-Type','aplication/json')
     header.append('Access-Control-Allow-Methods','"POST, GET,DELETE,PUT"')
@@ -54,7 +54,7 @@ export class IngresosService {
   }
 
   public eliminarIngreso(ingreso:Ingreso){
-    let url = this.UrlBase + '/ingresos/eliminar' + ingreso.id;
+    let url = this.UrlBase + '/ingresos/eliminar/' + ingreso.id;
     let header = new HttpHeaders();
     header.append('Content-Type','aplication/json')
     header.append('Access-Control-Allow-Origin','http://localhost');

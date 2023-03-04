@@ -1,1 +1,29 @@
-<p>editar works!</p>
+<button (click)="modificarIngreso()"><img src="../../../assets/icons/pencil-square.svg"></button>
+
+
+<div *ngIf="mostrarFormulario" tabindex="-1" class="modal show d-block" style="background-color: rgba(0,0,0,0.5);">
+	<div class="modal-dialog contenedor">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Editar Ingreso</h5>
+				<button type="button" class="btn-close" (click)="cerrarFormulario()" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+                    <h2 class="title text-center" *ngIf="ingreso.id==0">Registro Ingreso</h2>
+                    <h2 class="title text-center" *ngIf="ingreso.id>0">Editar Ingreso</h2>
+                      <div>
+                        <label for="nuevo-ingreso-descripcion">Descripción:</label>
+                        <input type="string" id="nuevo-ingreso-descripcion" name="nuevo-ingreso-descripcion" placeholder="Pon aquí la descripción" 
+                        [(ngModel)]="ingreso.descripcion">
+                      </div>
+                      <div>
+                        <label for="nuevo-ingreso-valor">Valor:</label>
+                        <input type="number" id="nuevo-ingreso-valor" name="nuevo-ingreso-valor" [(ngModel)]="ingreso.valor">
+                      </div>
+                        <button type="submit" (click)="editarIngreso()">Actualizar</button>
+                  </form>      
+			</div>
+		</div>
+	</div>
+</div>

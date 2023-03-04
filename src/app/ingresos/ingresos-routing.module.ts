@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'eliminar',
-    component:EliminarComponent
+    component: EliminarComponent
   }
 ];
 
