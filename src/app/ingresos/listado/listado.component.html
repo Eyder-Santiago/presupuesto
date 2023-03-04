@@ -13,8 +13,8 @@
                 <td data-label="Descripcion">{{i.descripcion}}</td>
                 <td data-label="Valor">${{i.valor}}</td>
                 <td data-label="Acciones">
-                    <app-editar (ingresoEditado)="onIngresoEditado" [ingreso]="i"></app-editar>
-                    <app-eliminar (ingresoEliminado)="onIngresoEliminado" [ingreso]="i"></app-eliminar>
+                    <app-editar (ingresoEditado)="onIngresoEditado($event)" [ingreso]="i"></app-editar>
+                    <app-eliminar (ingresoEliminado)="onIngresoEliminado($event)" [ingreso]="i"></app-eliminar>
                 </td>
             </tr>
         </tbody>
