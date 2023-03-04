@@ -13,7 +13,7 @@ export class ListadoComponent implements OnInit {
   //Output emite desde clase hija para ser escuchada por la clase padre
   @Output() ingresoEditado = new EventEmitter<Ingreso>();
   @Output() ingresoEliminado = new EventEmitter<Ingreso>();
-  @Output() ingresoValorTotal = new EventEmitter<number>();
+  //@Output() ingresoValorTotal = new EventEmitter<number>(); no se puede pasar en modo output a header por ser de diferentes módulos 
   @Input() ingresos:Ingreso[]=[]; //esta informarción es la cargada que obtendremos de layout
 
   constructor(private ingresoServicio:IngresoService) { }
@@ -25,13 +25,13 @@ export class ListadoComponent implements OnInit {
   public ingresoTotal:number = 0;
 
   public getValorIngreso() : void{
-    let total:number=0;
+    let total:number = 0;
     this.ingresoServicio.getIngresos().subscribe(resp =>{
       for (let i=0; i<resp.length;i++){
         total+=resp[i].valor;
       }
       this.ingresoTotal = total;
-      this.ingresoValorTotal.emit(total);
+      //this.ingresoValorTotal.emit(total)
     });
   }
 

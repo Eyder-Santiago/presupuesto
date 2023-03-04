@@ -12,10 +12,10 @@ export class ListadoComponent implements OnInit {
   //Output emite desde clase hija para ser escuchada por la clase padre
   @Output() egresoEditado = new EventEmitter<Egreso>();
   @Output() egresoEliminado = new EventEmitter<Egreso>();
-  @Output() egresoValorTotal = new EventEmitter<number>();
+  //@Output() egresoValorTotal = new EventEmitter<number>(); no se puede pasar a header en modo output por ser diferentes módulos
   @Input() egresos:Egreso[]=[]; //esta informarción es la cargada que obtendremos de layout
 
-  constructor(private servicioIngreso:EgresoService) { }
+  constructor(private servicioEgreso:EgresoService) { }
 
   ngOnInit(): void {
     //this.calcularTotalEgreso();
@@ -25,12 +25,12 @@ export class ListadoComponent implements OnInit {
   public egresoTotal:number = 0;
 
   public getValorEgresos(){
-    this.servicioIngreso.getEgresos().subscribe(resp =>{
-      let total = 0;
+    let total:number = 0;
+    this.servicioEgreso.getEgresos().subscribe(resp =>{
       for (let i = 0; i < resp.length; i++) {
         total += resp[i].valor;
       }
-      this.egresoValorTotal.emit(total);
+      //this.egresoValorTotal.emit(total);
       this.egresoTotal = total;
     });
   }

@@ -15,6 +15,7 @@
                 <td data-label="Acciones">
                     <app-editar (ingresoEditado)="onIngresoEditado($event)" [ingreso]="i"></app-editar>
                     <app-eliminar (ingresoEliminado)="onIngresoEliminado($event)" [ingreso]="i"></app-eliminar>
+                    <!--no se puede pasar por Output ingresoValorTotal porque son de diferentes modulos-->
                 </td>
             </tr>
         </tbody>

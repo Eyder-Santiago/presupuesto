@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Egreso } from 'src/app/modelo/egreso';
+import { Component, OnInit } from '@angular/core';
+import { EgresoService } from 'src/app/services/egreso.service';
+import { IngresoService } from 'src/app/services/ingreso.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,35 @@ import { Egreso } from 'src/app/modelo/egreso';
 })
 export class HeaderComponent implements OnInit {
 
-  //para recibir los elementos de la clase padre
-  @Input() egresos : Egreso[] = [];
-  
 
-  constructor() { }
+
+  constructor(private servicioEgreso:EgresoService, private servicioIngreso:IngresoService) { }
 
   ngOnInit(): void {
+   this.calcularSaldoTotal();
+  }
+
+  public saldoTotal:number=0;
+
+  calcularSaldoTotal(){
+    let saldoIngreso = 0;
+    this.servicioIngreso.getIngresos().subscribe(resp =>{
+      for (let i = 0; i < resp.length; i++) {
+        saldoIngreso += resp[i].valor;
+        this.saldoTotal = saldoIngreso;
+      }
+    });
+    let saldoEgreso = 0;
+    this.servicioEgreso.getEgresos().subscribe(resp =>{
+      for (let i = 0; i < resp.length; i++) {
+        saldoEgreso += resp[i].valor;
+      }
+      this.saldoTotal -=saldoEgreso;
+    });
+
+    console.log(this.saldoTotal);
+
+  ;
   }
 
 

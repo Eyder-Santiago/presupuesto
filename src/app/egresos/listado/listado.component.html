@@ -15,6 +15,7 @@
             <td data-label="Acciones"><!--si da error, toca crear html editar-->
                 <app-editar (egresoEditado)="onEgresoEditado($event)" [egreso]="e"></app-editar>
                 <app-eliminar (egresoEliminado)="onEgresoEliminado($event)" [egreso]="e"></app-eliminar>
+                <!--no se puede pasar por Output egresoValorTotal porque son de diferentes modulos-->
             </td>
             </tr>
         </tbody>
