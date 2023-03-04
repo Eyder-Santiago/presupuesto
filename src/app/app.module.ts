@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { EgresosModule } from './egresos/egresos.module';
 import { IngresosModule } from './ingresos/ingresos.module';
+import { HeaderComponent } from './componentes/header/header.component';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
